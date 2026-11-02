@@ -1243,3 +1243,220 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   Secret Private Analytics Modal (Amulya Only)
+   ========================================================================== */
+.secret-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.secret-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.secret-modal-dialog {
+  background-color: #141418;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.secret-modal-backdrop.open .secret-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.secret-modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.secret-modal-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.secret-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #10b981;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.secret-modal-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  letter-spacing: -0.015em;
+}
+
+.secret-modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #a1a1aa;
+  padding: 0.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.secret-modal-close:hover {
+  color: #f4f4f5;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.secret-modal-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Stats Grid */
+.secret-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.secret-stat-card {
+  background-color: rgba(24, 24, 27, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.secret-stat-icon {
+  font-size: 1.1rem;
+  margin-bottom: 0.15rem;
+}
+
+.secret-stat-value {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  letter-spacing: -0.02em;
+}
+
+.secret-stat-label {
+  font-size: 0.725rem;
+  color: #71717a;
+}
+
+/* Detailed Diagnostics */
+.secret-detail-section {
+  background-color: rgba(24, 24, 27, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.secret-detail-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a1a1aa;
+  margin-bottom: 0.75rem;
+}
+
+.secret-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.secret-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.775rem;
+}
+
+.secret-detail-key {
+  color: #71717a;
+}
+
+.secret-detail-val {
+  color: #d4d4d8;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* GoatCounter Cloud Banner */
+.secret-cloud-banner {
+  background: linear-gradient(135deg, rgba(39, 39, 42, 0.6) 0%, rgba(24, 24, 27, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.secret-cloud-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #f4f4f5;
+  color: #09090b;
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.secret-cloud-btn:hover {
+  opacity: 0.9;
+}
+
+.secret-modal-footer-note {
+  font-size: 0.725rem;
+  color: #71717a;
+  text-align: center;
+}
+
+kbd {
+  background-color: #27272a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #f4f4f5;
+}
+

@@ -11,7 +11,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
+
+  <!-- Invisible Privacy-Respecting Visitor Analytics (GoatCounter) -->
+  <script data-goatcounter="https://amulyagupta.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-800 selection:text-zinc-100">
 
@@ -670,6 +673,91 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <!-- Secret Private Analytics Modal (Visible only to Amulya via Shift+A or 2x Logo Click) -->
+  <div class="secret-modal-backdrop" id="secret-analytics-modal" aria-hidden="true">
+    <div class="secret-modal-dialog">
+      <div class="secret-modal-header">
+        <div class="secret-modal-title-row">
+          <span class="secret-badge">🔒 Private Metrics</span>
+          <h3 class="secret-modal-heading">Portfolio Visitor Analytics</h3>
+        </div>
+        <button type="button" class="secret-modal-close" id="secret-modal-close-btn" aria-label="Close analytics modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="secret-modal-body">
+        <!-- Key Metrics Grid -->
+        <div class="secret-stats-grid">
+          <div class="secret-stat-card">
+            <div class="secret-stat-icon">👁️</div>
+            <div class="secret-stat-value" id="metric-total-views">0</div>
+            <div class="secret-stat-label">Total Portfolio Views</div>
+          </div>
+          <div class="secret-stat-card">
+            <div class="secret-stat-icon">👤</div>
+            <div class="secret-stat-value" id="metric-unique-visitors">0</div>
+            <div class="secret-stat-label">Unique Visitors</div>
+          </div>
+          <div class="secret-stat-card">
+            <div class="secret-stat-icon">⏱️</div>
+            <div class="secret-stat-value" id="metric-session-duration">0s</div>
+            <div class="secret-stat-label">Session Active Time</div>
+          </div>
+          <div class="secret-stat-card">
+            <div class="secret-stat-icon">🌐</div>
+            <div class="secret-stat-value text-sm truncate" id="metric-referrer">Direct</div>
+            <div class="secret-stat-label">Incoming Referrer</div>
+          </div>
+        </div>
+
+        <!-- Detailed Diagnostics / Context -->
+        <div class="secret-detail-section">
+          <h4 class="secret-detail-title">Visitor Context & Diagnostics</h4>
+          <div class="secret-detail-list">
+            <div class="secret-detail-row">
+              <span class="secret-detail-key">Current Screen / Viewport</span>
+              <span class="secret-detail-val" id="metric-screen-res">—</span>
+            </div>
+            <div class="secret-detail-row">
+              <span class="secret-detail-key">Browser & Platform</span>
+              <span class="secret-detail-val" id="metric-browser-info">—</span>
+            </div>
+            <div class="secret-detail-row">
+              <span class="secret-detail-key">First Visit Recorded</span>
+              <span class="secret-detail-val" id="metric-first-visit">—</span>
+            </div>
+            <div class="secret-detail-row">
+              <span class="secret-detail-key">Latest Visit Recorded</span>
+              <span class="secret-detail-val" id="metric-latest-visit">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- GoatCounter Cloud Dashboard Link -->
+        <div class="secret-cloud-banner">
+          <div class="secret-cloud-text">
+            <div class="font-medium text-zinc-100">GoatCounter Web Dashboard</div>
+            <div class="text-xs text-zinc-400">View visitor country maps, referrers, and timeline charts.</div>
+          </div>
+          <a href="https://amulyagupta.goatcounter.com" target="_blank" rel="noopener noreferrer" class="secret-cloud-btn">
+            <span>Open Dashboard</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7M17 7H7M17 7V17"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="secret-modal-footer-note">
+          <span>Shortcut: Press <kbd>Shift</kbd> + <kbd>A</kbd> or double-click the <kbd>{ AG }</kbd> logo anytime to toggle.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=5"></script>
 </body>
 </html>
